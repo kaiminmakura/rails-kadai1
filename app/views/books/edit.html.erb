@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+　<head>
+  　<style type="text/css">
+    　.turbolinks-progress-bar {
+  　　position: fixed;
+  　　display: block;
+  　　top: 0;
+  　　left: 0;
+  　　height: 3px;
+  　　background: #0076ff;
+  　　z-index: 9999;
+  　　transition: width 300ms ease-out, opacity 150ms 150ms ease-in;
+  　　transform: translate3d(0, 0, 0);
+　　　}
+　　</style>
+  </head>
+
+  <body>
+　　　<h1>Editing Book</h1>
+　　　<%= form_for(@book) do |f| %>
+     <%= render 'layouts/error_messages', book: f.object %>
+         <h4>Title</h4>
+         <%= f.text_field :title %>
+         <h4>Body</h4>
+         <%= f.text_area :body %>
+         <%= f.submit 'Update Book' %>
+     <%= link_to"Show",book_path %> |
+     <%= link_to"Back",books_path %>
+     <% end %>
+  </body>
+</html>
